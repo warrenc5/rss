@@ -1,0 +1,59 @@
+{
+    "title": "",
+    "link": "",
+    "description": "",
+    "language": "",
+    "copyright": "",
+    "managingEditor": "",
+    "webMaster": "",
+    "pubDate": "",
+    "lastBuildDate": "",
+    "category": [{
+            "value": "",
+            "domain": "domain"
+        }],
+    "generator": "",
+    "docs": "",
+    "cloud": {
+        "domain": "",
+        "port": "",
+        "path": "",
+        "registerProcedure": "",
+        "protocol": ""
+    },
+    "ttl": 1,
+    "image": {
+        "url": "",
+        "title": "",
+        "link": "",
+        "width": "",
+        "height": "",
+        "description": ""
+    },
+    "rating": "",
+    "textInput": {
+        "title": "",
+        "description": "",
+        "name": "",
+        "link": ""
+    },
+    "skipHours": "",
+    "skipDays": {
+        "day": []
+    },
+    "item": [{
+            "title": "",
+            "description": "",
+            "link": "",
+            "author": "",
+            "category": [],
+            "comments": "",
+            "enclosure": "",
+            "guid": "",
+            "pubDate": "",
+            "source": ""
+        }],
+    "otherAttributes": {
+        "{ns}local": "apple"
+    }
+}

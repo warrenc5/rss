@@ -1,0 +1,199 @@
+<?xml version="1.0" standalone="no"?>
+<?xml-stylesheet href="resource:xsltforms/xsltforms.xsl" type="text/xsl"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:xf="http://www.w3.org/2002/xforms" 
+      xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ev="http://www.w3.org/2001/xml-events"
+      xmlns:example="urn:example.org:mybookmarks"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"
+      xml:lang="en">
+
+    <head>
+        <link rel="stylesheet" type="text/css" href="style.css"/>
+        <xf:model id="bookmarks" version="1.1" schema="resource:rss-2_0.xsd">
+            <xf:instance id="data" xmlns="urn:example.org:mybookmarks">
+              <bookmarks id="5"/>
+            </xf:instance>
+
+            <xf:instance id="sample" xmlns="urn:example.org:mybookmarks">
+                <bookmarks example:id="9">
+                    <section name="main">
+                        <bookmark href="http://www.example.com/xforms.xml" name="Main page" />
+                    </section>
+                    <section name="demos">
+                        <bookmark href="http://www.example.com/demo/images.fo" name="images" />
+                        <bookmark href="http://www.example.com/demo/xf-ecma.xml" name="ecma" />
+                        <bookmark href="http://www.example.com/demo/sip.fo" name="sip" />
+                    </section>
+                    <section name="XForms">
+                        <bookmark href="file:///C/source/xmlevents.xml" name="XML events" />
+                        <bookmark href="file:///C/source/model3.xml" name="model3" />
+                        <bookmark href="file:///C/source/repeat.fo" name="repeat" />
+                    </section>
+                </bookmarks>
+            </xf:instance>
+
+            <xf:bind nodeset="instance('data')">
+            <xf:bind nodeset="@id" type="string" />
+            <xf:bind nodeset="section/@name" type="string" />
+            <xf:bind nodeset="section/bookmark/@href" type="string" />
+            <xf:bind nodeset="section/bookmark/@name" type="string" />
+            </xf:bind>
+
+            <xf:instance id="prototype" xmlns="urn:example.org:mybookmarks">
+                <bookmarks id="">
+                    <section name="New Section">
+                        <bookmark href="New Location" name="New Name" />
+                    </section>
+                </bookmarks>
+            </xf:instance>
+
+            <xf:instance id="LoadMyBookmarksSoap">
+                <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns="">
+                    <soap:Body>
+                            <example:primaryKey>Wozza</example:primaryKey>
+                    </soap:Body>
+                </soap:Envelope>
+            </xf:instance>
+
+            <xf:instance id="SaveMyBookmarksSoap" xmlns="urn:example.org:mybookmarks">
+                <soap:Envelope >
+                    <soap:Body>
+                        <bookmarks/>
+                    </soap:Body>
+                </soap:Envelope>
+            </xf:instance>
+
+            <xf:instance id="SoapOut">
+                <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+                </soap:Envelope>
+            </xf:instance>
+
+            <xf:submission id="LoadSoapSubmit" ref="instance('LoadMyBookmarksSoap')" replace="instance" instance="SoapOut" method="post" mediatype="application/soap+xml" action="http://localhost:8500/example-server/mybookmarks/mybookmarks/">
+                <xf:action ev:event="xforms-submit-done">
+                    <xf:insert origin="instance('SoapOut')/soap:Body/example:bookmarks/example:section" nodeset="instance('data')" at="0" position="after" />
+                    <xf:toggle case="show-bookmarks"/>
+                </xf:action>
+                <xf:action ev:event="xforms-submit-error">
+                    <!--TODO://how to get error-->
+                    <xf:toggle case="any-error"/>
+                </xf:action>
+            </xf:submission>
+
+            <xf:submission id="SaveSoapSubmit" method="post" ref="instance('SaveMyBookmarksSoap')" mediatype="application/soap+xml" action="http://localhost:8500/example-server/mybookmarks/mybookmarks/" replace="instance" instance="SoapOut">
+            <xf:action ev:event="xforms-submit-error">
+                <xf:toggle case="save-error"/>
+                <xf:toggle case="any-error"/>
+            </xf:action>
+            </xf:submission>
+
+            <xf:submission id="TestSubmit" method="post" ref="instance('prototype')" mediatype="application/soap+xml" action="http://localhost:8500/example-server/mybookmarks/mybookmarks/" replace="instance" instance="SoapOut"/>
+        </xf:model>
+    </head>
+
+    <body class="tundra" style="overflow:hidden;">
+<!--
+<xf:switch>
+  <xf:case id="in" selected="false">
+    <xf:input ref="yourname">
+      <xf:label>Please tell me your name</xf:label>
+      <xf:toggle ev:event="DOMActivate" case="out"/>
+    </xf:input>
+  </xf:case>
+  <xf:case id="out" selected="false">
+    <p>Hello <xf:output ref="yourname" />
+      <xf:trigger id="editButton">
+        <xf:label>Edit</xf:label>
+        <xf:toggle ev:event="DOMActivate" case="in"/>
+      </xf:trigger>
+    </p>
+  </xf:case>
+</xf:switch>
+-->
+
+        <xf:label>My Bookmarks</xf:label>
+
+        <xf:input ref="instance('LoadMyBookmarksSoap')/soap:Body/example:primaryKey/text()" model="bookmarks">
+            <xf:label class="sectionLabel">User Id.</xf:label>
+        </xf:input>
+        <p>
+            <xf:switch id="main">
+                <xf:case name="any-error" selected="true">
+                    <xf:input ref="instance('SoapOut')/soap:Body/soap:Fault/faultstring" model="bookmarks" xmlns="">
+                        <xf:label class="sectionLabel">Error</xf:label>
+                    </xf:input>
+                </xf:case>
+                <xf:case name="show-bookmarks" selected="false">
+                    <xf:repeat nodeset="instance('SoapOut')/soap:Body/example:bookmarks/example:section" id="repeatSections" appearance="full">
+                        <xf:input id="section" ref="@name" class="editField">
+                            <xf:label class="sectionLabel">Section</xf:label>
+                        </xf:input>
+                        <!-- BOOKMARK REPEAT START -->
+                        <xf:repeat nodeset="example:bookmark" id="repeatBookmarks" appearance="compact">
+                            <xf:input ref="@name">
+                                <xf:label>Bookmark name</xf:label>
+                            </xf:input>
+                            <xf:input ref="@href" class="URL">
+                                <xf:label>URL</xf:label>
+                            </xf:input>
+                        </xf:repeat>
+                    </xf:repeat>
+                    <p>
+                        <!-- INSERT BOOKMARK BUTTON -->
+                        <xf:trigger id="insertbutton">
+                            <xf:label>Insert bookmark</xf:label>
+                            <xf:insert origin="instance('prototype')/example:section/example:bookmark" nodeset="example:section[index('repeatSections')]/example:bookmark" at="index('repeatBookmarks')" position="after" ev:event="DOMActivate"/>
+                        </xf:trigger>
+                        <!-- DELETE BOOKMARK BUTTON -->
+                        <xf:trigger id="delete">
+                            <xf:label>Delete bookmark</xf:label>
+                            <xf:delete nodeset="example:section[index('repeatSections')]/example:bookmark" at="index('repeatBookmarks')" ev:event="DOMActivate"/>
+                        </xf:trigger>
+                    </p>
+                    <p>
+                        <!-- INSERT SECTION BUTTON -->
+                        <xf:trigger id="insertsectionbutton">
+                            <xf:label>Insert section</xf:label>
+                            <xf:insert origin="instance('prototype')/example:section" nodeset="example:section" at="index('repeatSections')" position="after" ev:event="DOMActivate"/>
+                        </xf:trigger>
+                        <!-- DELETE SECTION BUTTON -->
+                        <xf:trigger id="deletesectionbutton">
+                            <xf:label>Delete section</xf:label>
+                            <xf:delete nodeset="example:section" at="index('repeatSections')" ev:event="DOMActivate"/>
+                        </xf:trigger>
+                    </p>
+                </xf:case>
+            </xf:switch>
+        </p>
+
+        <!-- SUBMIT LOAD BUTTON -->
+        <xf:trigger>
+            <xf:label>Load</xf:label>
+            <xf:hint>Click to submit</xf:hint>
+            <xf:action ev:event="DOMActivate">
+                <!--<xf:setvalue ref="instance('LoadMyBookmarksSoap')/soap:Body/primaryKey/text()" value="instance('')/@example:id" />-->
+                <xf:send submission="LoadSoapSubmit" />
+            </xf:action>
+        </xf:trigger>
+
+        <xf:switch id="showbookmarks">
+            <xf:case name="load-error">
+                <xf:submit submission="SaveSoapSubmit">
+                    <xf:label>Save</xf:label>
+                    <xf:hint>Click to submit</xf:hint>
+                    <xf:action ev:event="DOMActivate">
+                        <xf:delete context="instance('SaveMyBookmarksSoap')/soap:Body/example:bookmarks" at="1" />
+                        <xf:insert nodeset="instance('SaveMyBookmarksSoap')/soap:Body/node()" position="before" at="1" origin="instance('data')" />
+                        <xf:send submission="SaveSoapSubmit" />
+                    </xf:action>
+                </xf:submit>
+            </xf:case>
+        </xf:switch>
+
+        <xf:trigger id="new">
+            <xf:label>New</xf:label>
+            <xf:toggle ev:event="DOMActivate" case="any-error"/>
+        </xf:trigger>
+
+    </body>
+</html>

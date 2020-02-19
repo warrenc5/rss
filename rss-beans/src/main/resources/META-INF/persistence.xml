@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="1.0" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence              http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd">
+  <persistence-unit name="myrss" transaction-type="JTA">
+    <jta-data-source>java:/jboss/datasources/RssDS</jta-data-source>
+    <non-jta-data-source>java:/jboss/datasources/RssDS</non-jta-data-source>
+     <class>rss.Category</class>
+        <class>rss.Cloud</class>
+        <class>rss.Enclosure</class>
+        <class>rss.Guid</class>
+        <class>rss.Image</class>
+        <class>rss.Rss</class>
+        <class>rss.RssChannel</class>
+        <class>rss.RssItem</class>
+        <class>rss.Source</class>
+        <class>rss.TextInput</class>
+    <exclude-unlisted-classes>true</exclude-unlisted-classes>
+    <properties>
+      <property name="hibernate.hbm2ddl.auto" value="update"/>
+      <!--
+      <property name="hibernate.hbm2ddl.auto" value="create-drop"/>
+      -->
+      <property name="hibernate.show_sql" value="false"/>
+      <!--
+      <property name="hibernate.transaction.manager_lookup_class" value="org.hibernate.transaction.JBossTransactionManagerLookup"/>
+      <property name="jboss.entity.manager.jndi.name" value="java:/RssEntityManagerName"/>
+      <property name="jboss.entity.manager.factory.jndi.name" value="java:/RssEntityManagerFactoryName"/>
+      -->
+      <!--
+      <property name="hibernate.bytecode.use_reflection_optimizer" value="true"/>
+      <property name="hibernate.ejb.use_class_enhancer" value="true"/>-->
+      <!--
+      <property name="hibernate.transaction.factory_class" value="org.hibernate.transaction.JTATransactionFactory"/>
+      -->
+    </properties>
+  </persistence-unit>
+</persistence>

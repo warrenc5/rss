@@ -1,0 +1,65 @@
+{
+    "title": "The Main Channel",
+    "link": null,
+    "description": null,
+    "language": null,
+    "copyright": null,
+    "managingEditor": null,
+    "webMaster": null,
+    "pubDate": null,
+    "lastBuildDate": null,
+    "category": [{
+            "value": null,
+            "domain": "domain",
+    #        "hjid": null
+        }],
+    "generator": null,
+    "docs": null,
+    "cloud": {
+        "domain": null,
+        "port": null,
+        "path": null,
+        "registerProcedure": null,
+        "protocol": null,
+    #    "hjid": null
+    },
+    "ttl": 1,
+    "image": {
+        "url": null,
+        "title": null,
+        "link": null,
+        "width": null,
+        "height": null,
+        "description": null,
+    #    "hjid": null
+    },
+    "rating": null,
+    "textInput": {
+        "title": null,
+        "description": null,
+        "name": null,
+        "link": null,
+    #    "hjid": null
+    },
+    "skipHours": null,
+    "skipDays": {
+        "day": []
+    },
+    "item": [{
+            "title": null,
+            "description": null,
+            "link": null,
+            "author": null,
+            "category": [],
+            "comments": null,
+            "enclosure": null,
+            "guid": null,
+            "pubDate": null,
+            "source": null,
+            "hjid": null
+        }],
+    "otherAttributes": {
+        "{ns}local": "apple"
+    },
+    # "hjid": null
+}

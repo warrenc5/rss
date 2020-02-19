@@ -1,0 +1,1232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="e60e4901-eff0-4200-bb22-1e3de08f364f" activeEnvironment="Default environment" name="RSS" lastOpened="2016-12-08T15:33:21.591+11:00" resourceRoot="" soapui-version="6.0.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="9a04c283-6853-4582-8f47-3725d4e55ace" wsaVersion="NONE" name="RssServiceSoapBinding" type="wsdl" bindingName="{http://session.rss.mofokom/}RssServiceSoapBinding" soapVersion="1_1" anonymous="optional" definition="http://localhost:8080/rss/rss-service/?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:8080/rss/rss-service/?wsdl"><con:part><con:url>http://localhost:8080/rss/rss-service/?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="RssService" targetNamespace="http://session.rss.mofokom/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://session.rss.mofokom/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns3="http://schemas.xmlsoap.org/soap/http" xmlns:ns1="http://microsyndicate.com/rss">
+  <wsdl:import location="http://localhost:8080/rss/rss-service/?wsdl=RssWebService.wsdl" namespace="http://microsyndicate.com/rss"></wsdl:import>
+  <wsdl:binding name="RssServiceSoapBinding" type="ns1:RssWebService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="GetRssChannel">
+      <soap:operation soapAction="GetRssChannel" style="document"/>
+      <wsdl:input name="GetRssChannel">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="GetRssChannelResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="RssException">
+        <soap:fault name="RssException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateChannel">
+      <soap:operation soapAction="UpdateChannel" style="document"/>
+      <wsdl:input name="UpdateChannel">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="UpdateChannelResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="RssException">
+        <soap:fault name="RssException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveEnclosure">
+      <soap:operation soapAction="RemoveEnclosure" style="document"/>
+      <wsdl:input name="RemoveEnclosure">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="RemoveEnclosureResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="RssException">
+        <soap:fault name="RssException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AddChannel">
+      <soap:operation soapAction="AddChannel" style="document"/>
+      <wsdl:input name="AddChannel">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="AddChannelResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="RssException">
+        <soap:fault name="RssException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateItem">
+      <soap:operation soapAction="UpdateItem" style="document"/>
+      <wsdl:input name="UpdateItem">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="UpdateItemResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="RssException">
+        <soap:fault name="RssException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveItem">
+      <soap:operation soapAction="GetRssFeed" style="document"/>
+      <wsdl:input name="RemoveItem">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="RemoveItemResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="RssException">
+        <soap:fault name="RssException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AddEnclosure">
+      <soap:operation soapAction="AddEnclosure" style="document"/>
+      <wsdl:input name="AddEnclosure">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="AddEnclosureResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="RssException">
+        <soap:fault name="RssException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AddItem">
+      <soap:operation soapAction="AddItem" style="document"/>
+      <wsdl:input name="AddItem">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="AddItemResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="RssException">
+        <soap:fault name="RssException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllRssFeedNames">
+      <soap:operation soapAction="GetAllRssFeedNames" style="document"/>
+      <wsdl:input name="GetAllRssFeedNames">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="GetAllRssFeedNamesResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="RssException">
+        <soap:fault name="RssException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetRssFeed">
+      <soap:operation soapAction="GetRssFeed" style="document"/>
+      <wsdl:input name="GetRssFeed">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="GetRssFeedResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="RssException">
+        <soap:fault name="RssException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveRssChannel">
+      <soap:operation soapAction="RemoveRssChannel" style="document"/>
+      <wsdl:input name="RemoveRssChannel">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="RemoveRssChannelResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="RssException">
+        <soap:fault name="RssException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RenameRssFeed">
+      <soap:operation soapAction="RenameRssFeed" style="document"/>
+      <wsdl:input name="RenameRssFeed">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="RenameRssFeedResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="RssException">
+        <soap:fault name="RssException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="RssService">
+    <wsdl:port binding="tns:RssServiceSoapBinding" name="RssPort">
+      <soap:address location="http://localhost:8080/rss/rss-service/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>http://localhost:8080/rss/rss-service/?wsdl=RssWebService.wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="RssWebService" targetNamespace="http://microsyndicate.com/rss" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns2="http://microsyndicate.com/rss/" xmlns:ns1="http://microsyndicate.com/rss">
+  <wsdl:types>
+    <xs:schema elementFormDefault="unqualified" targetNamespace="http://microsyndicate.com/rss" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://microsyndicate.com/rss">
+      <xs:element name="AddChannel" type="tns:AddChannel"/>
+      <xs:element name="AddChannelResponse" type="tns:AddChannelResponse"/>
+      <xs:element name="AddEnclosure" type="tns:AddEnclosure"/>
+      <xs:element name="AddEnclosureResponse" type="tns:AddEnclosureResponse"/>
+      <xs:element name="AddItem" type="tns:AddItem"/>
+      <xs:element name="AddItemResponse" type="tns:AddItemResponse"/>
+      <xs:element name="GetAllRssFeedNames" type="tns:GetAllRssFeedNames"/>
+      <xs:element name="GetAllRssFeedNamesResponse" type="tns:GetAllRssFeedNamesResponse"/>
+      <xs:element name="GetRssChannel" type="tns:GetRssChannel"/>
+      <xs:element name="GetRssChannelResponse" type="tns:GetRssChannelResponse"/>
+      <xs:element name="GetRssFeed" type="tns:GetRssFeed"/>
+      <xs:element name="GetRssFeedResponse" type="tns:GetRssFeedResponse"/>
+      <xs:element name="RemoveEnclosure" type="tns:RemoveEnclosure"/>
+      <xs:element name="RemoveEnclosureResponse" type="tns:RemoveEnclosureResponse"/>
+      <xs:element name="RemoveItem" type="tns:RemoveItem"/>
+      <xs:element name="RemoveItemResponse" type="tns:RemoveItemResponse"/>
+      <xs:element name="RemoveRssChannel" type="tns:RemoveRssChannel"/>
+      <xs:element name="RemoveRssChannelResponse" type="tns:RemoveRssChannelResponse"/>
+      <xs:element name="RenameRssFeed" type="tns:RenameRssFeed"/>
+      <xs:element name="RenameRssFeedResponse" type="tns:RenameRssFeedResponse"/>
+      <xs:element name="UpdateChannel" type="tns:UpdateChannel"/>
+      <xs:element name="UpdateChannelResponse" type="tns:UpdateChannelResponse"/>
+      <xs:element name="UpdateItem" type="tns:UpdateItem"/>
+      <xs:element name="UpdateItemResponse" type="tns:UpdateItemResponse"/>
+      <xs:element name="rss">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="channel" type="tns:RssChannel"/>
+          </xs:sequence>
+          <xs:attribute name="version" type="xs:decimal" use="required"/>
+          <xs:attribute name="Hjid" type="xs:long"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="GetRssChannel">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ChannelName" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetRssChannelResponse">
+        <xs:sequence>
+          <xs:element form="qualified" minOccurs="0" name="RssChannel" type="tns:RssChannel"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="RssChannel">
+        <xs:sequence>
+          <xs:element name="title" type="xs:string"/>
+          <xs:element name="link" type="xs:anyURI"/>
+          <xs:element name="description" type="xs:string"/>
+          <xs:element minOccurs="0" name="language" type="xs:language"/>
+          <xs:element minOccurs="0" name="copyright" type="xs:string"/>
+          <xs:element minOccurs="0" name="managingEditor" type="xs:string"/>
+          <xs:element minOccurs="0" name="webMaster" type="xs:string"/>
+          <xs:element minOccurs="0" name="pubDate" type="xs:string"/>
+          <xs:element minOccurs="0" name="lastBuildDate" type="xs:string"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="category" nillable="true" type="tns:Category"/>
+          <xs:element minOccurs="0" name="generator" type="xs:string"/>
+          <xs:element minOccurs="0" name="docs" type="xs:anyURI"/>
+          <xs:element minOccurs="0" name="cloud" type="tns:Cloud"/>
+          <xs:element minOccurs="0" name="ttl" type="xs:nonNegativeInteger"/>
+          <xs:element minOccurs="0" name="image" type="tns:Image"/>
+          <xs:element minOccurs="0" name="rating" type="xs:string"/>
+          <xs:element minOccurs="0" name="textInput" type="tns:TextInput"/>
+          <xs:element minOccurs="0" name="skipHours" type="tns:SkipHoursList"/>
+          <xs:element minOccurs="0" name="skipDays" type="tns:SkipDaysList"/>
+          <xs:element maxOccurs="unbounded" name="item" type="tns:RssItem"/>
+        </xs:sequence>
+        <xs:anyAttribute namespace="##other" processContents="skip"/>
+      </xs:complexType>
+      <xs:complexType name="Category">
+        <xs:simpleContent>
+          <xs:extension base="xs:string">
+            <xs:attribute name="domain" type="xs:string"/>
+          </xs:extension>
+        </xs:simpleContent>
+      </xs:complexType>
+      <xs:complexType name="Cloud">
+        <xs:sequence/>
+        <xs:attribute name="domain" type="xs:string" use="required"/>
+        <xs:attribute name="port" type="xs:positiveInteger" use="required"/>
+        <xs:attribute name="path" type="xs:string" use="required"/>
+        <xs:attribute name="registerProcedure" type="xs:string" use="required"/>
+        <xs:attribute name="protocol" type="tns:CloudProtocol" use="required"/>
+      </xs:complexType>
+      <xs:complexType name="Image">
+        <xs:all>
+          <xs:element name="url" type="xs:anyURI"/>
+          <xs:element name="title" type="xs:string"/>
+          <xs:element name="link" type="xs:anyURI"/>
+          <xs:element default="88" minOccurs="0" name="width" type="xs:positiveInteger"/>
+          <xs:element default="31" minOccurs="0" name="height" type="xs:positiveInteger"/>
+          <xs:element minOccurs="0" name="description" type="xs:string"/>
+        </xs:all>
+      </xs:complexType>
+      <xs:complexType name="TextInput">
+        <xs:all>
+          <xs:element name="title" type="xs:string"/>
+          <xs:element name="description" type="xs:string"/>
+          <xs:element name="name" type="xs:string"/>
+          <xs:element name="link" type="xs:anyURI"/>
+        </xs:all>
+      </xs:complexType>
+      <xs:complexType name="SkipHoursList">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="hour" nillable="true" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SkipDaysList">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="day" nillable="true" type="tns:SkipDay"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="RssItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="title" type="xs:string"/>
+          <xs:element minOccurs="0" name="description" type="xs:string"/>
+          <xs:element minOccurs="0" name="link" type="xs:anyURI"/>
+          <xs:element minOccurs="0" name="author" type="xs:string"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="category" nillable="true" type="tns:Category"/>
+          <xs:element minOccurs="0" name="comments" type="xs:anyURI"/>
+          <xs:element minOccurs="0" name="enclosure" type="tns:Enclosure"/>
+          <xs:element minOccurs="0" name="guid" type="tns:Guid"/>
+          <xs:element minOccurs="0" name="pubDate" type="xs:string"/>
+          <xs:element minOccurs="0" name="source" type="tns:Source"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="Enclosure">
+        <xs:simpleContent>
+          <xs:extension base="xs:string">
+            <xs:attribute name="url" type="xs:anyURI" use="required"/>
+            <xs:attribute name="length" type="xs:nonNegativeInteger" use="required"/>
+            <xs:attribute name="type" type="xs:string" use="required"/>
+          </xs:extension>
+        </xs:simpleContent>
+      </xs:complexType>
+      <xs:complexType name="Guid">
+        <xs:simpleContent>
+          <xs:extension base="xs:string">
+            <xs:attribute name="isPermaLink" type="xs:boolean"/>
+          </xs:extension>
+        </xs:simpleContent>
+      </xs:complexType>
+      <xs:complexType name="Source">
+        <xs:simpleContent>
+          <xs:extension base="xs:string">
+            <xs:attribute name="url" type="xs:anyURI"/>
+          </xs:extension>
+        </xs:simpleContent>
+      </xs:complexType>
+      <xs:complexType name="UpdateChannel">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="RssChannelTitle" type="xs:string"/>
+          <xs:element minOccurs="0" name="RssChannel" type="tns:RssChannel"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="UpdateChannelResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:RssChannel"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AddChannel">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="RssChannel" type="tns:RssChannel"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AddChannelResponse">
+        <xs:sequence>
+          <xs:element form="qualified" minOccurs="0" name="NewChannel">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="channel" type="tns:RssChannel"/>
+              </xs:sequence>
+              <xs:attribute name="version" type="xs:decimal" use="required"/>
+              <xs:attribute name="Hjid" type="xs:long"/>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="RemoveEnclosure">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="RssItemGuid" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="RemoveEnclosureResponse">
+        <xs:sequence>
+          <xs:element form="qualified" minOccurs="0" name="OldEnclosure" type="tns:Enclosure"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="UpdateItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="RssChannelTitle" type="xs:string"/>
+          <xs:element minOccurs="0" name="RssItem" type="tns:RssItem"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="UpdateItemResponse">
+        <xs:sequence>
+          <xs:element form="qualified" minOccurs="0" name="NewItem" type="tns:RssItem"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="RemoveItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="RssChannelTitle" type="xs:string"/>
+          <xs:element minOccurs="0" name="RssItemGuid" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="RemoveItemResponse">
+        <xs:sequence>
+          <xs:element form="qualified" minOccurs="0" name="OldItem" type="tns:RssItem"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AddEnclosure">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="RssItemGuid" type="xs:string"/>
+          <xs:element minOccurs="0" name="Enclosure" type="tns:Enclosure"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AddEnclosureResponse">
+        <xs:sequence>
+          <xs:element form="qualified" minOccurs="0" name="NewEnclosure" type="tns:Enclosure"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AddItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="RssChannelTitle" type="xs:string"/>
+          <xs:element minOccurs="0" name="RssItem" type="tns:RssItem"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AddItemResponse">
+        <xs:sequence>
+          <xs:element form="qualified" minOccurs="0" name="NewItem" type="tns:RssItem"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetAllRssFeedNames">
+        <xs:sequence/>
+      </xs:complexType>
+      <xs:complexType name="GetAllRssFeedNamesResponse">
+        <xs:sequence>
+          <xs:element form="qualified" maxOccurs="unbounded" minOccurs="0" name="AllRssFeedNames" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetRssFeed">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ChannelName" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetRssFeedResponse">
+        <xs:sequence>
+          <xs:element form="qualified" minOccurs="0" name="RssFeed">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="channel" type="tns:RssChannel"/>
+              </xs:sequence>
+              <xs:attribute name="version" type="xs:decimal" use="required"/>
+              <xs:attribute name="Hjid" type="xs:long"/>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="RemoveRssChannel">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ChannelName" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="RemoveRssChannelResponse">
+        <xs:sequence>
+          <xs:element form="qualified" minOccurs="0" name="RssChannel" type="tns:RssChannel"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="RenameRssFeed">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ChannelName" type="xs:string"/>
+          <xs:element minOccurs="0" name="NewChannelName" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="RenameRssFeedResponse">
+        <xs:sequence>
+          <xs:element form="qualified" minOccurs="0" name="renameFeed">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="channel" type="tns:RssChannel"/>
+              </xs:sequence>
+              <xs:attribute name="version" type="xs:decimal" use="required"/>
+              <xs:attribute name="Hjid" type="xs:long"/>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="CloudProtocol">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="xml-rpc"/>
+          <xs:enumeration value="http-post"/>
+          <xs:enumeration value="soap"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="SkipDay">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Monday"/>
+          <xs:enumeration value="Tuesday"/>
+          <xs:enumeration value="Wednesday"/>
+          <xs:enumeration value="Thursday"/>
+          <xs:enumeration value="Friday"/>
+          <xs:enumeration value="Saturday"/>
+          <xs:enumeration value="Sunday"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:schema>
+    <xsd:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://microsyndicate.com/rss/" xmlns:tns="http://microsyndicate.com/rss/">
+      <xsd:element name="RssException" type="tns:RssException"/>
+      <xsd:complexType name="RssException">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="message" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="RenameRssFeedResponse">
+    <wsdl:part element="ns1:RenameRssFeedResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="UpdateItemResponse">
+    <wsdl:part element="ns1:UpdateItemResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="AddEnclosureResponse">
+    <wsdl:part element="ns1:AddEnclosureResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="RemoveEnclosure">
+    <wsdl:part element="ns1:RemoveEnclosure" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetRssFeedResponse">
+    <wsdl:part element="ns1:GetRssFeedResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="UpdateItem">
+    <wsdl:part element="ns1:UpdateItem" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetRssChannelResponse">
+    <wsdl:part element="ns1:GetRssChannelResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetAllRssFeedNamesResponse">
+    <wsdl:part element="ns1:GetAllRssFeedNamesResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="AddChannelResponse">
+    <wsdl:part element="ns1:AddChannelResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="AddItemResponse">
+    <wsdl:part element="ns1:AddItemResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetRssFeed">
+    <wsdl:part element="ns1:GetRssFeed" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="RssException">
+    <wsdl:part element="ns2:RssException" name="RssException"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="RemoveEnclosureResponse">
+    <wsdl:part element="ns1:RemoveEnclosureResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetRssChannel">
+    <wsdl:part element="ns1:GetRssChannel" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="UpdateChannel">
+    <wsdl:part element="ns1:UpdateChannel" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="UpdateChannelResponse">
+    <wsdl:part element="ns1:UpdateChannelResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="RemoveItemResponse">
+    <wsdl:part element="ns1:RemoveItemResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="AddChannel">
+    <wsdl:part element="ns1:AddChannel" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="RemoveRssChannelResponse">
+    <wsdl:part element="ns1:RemoveRssChannelResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="RemoveItem">
+    <wsdl:part element="ns1:RemoveItem" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="AddEnclosure">
+    <wsdl:part element="ns1:AddEnclosure" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="AddItem">
+    <wsdl:part element="ns1:AddItem" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetAllRssFeedNames">
+    <wsdl:part element="ns1:GetAllRssFeedNames" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="RemoveRssChannel">
+    <wsdl:part element="ns1:RemoveRssChannel" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="RenameRssFeed">
+    <wsdl:part element="ns1:RenameRssFeed" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="RssWebService">
+    <wsdl:operation name="GetRssChannel">
+      <wsdl:input message="ns1:GetRssChannel" name="GetRssChannel"></wsdl:input>
+      <wsdl:output message="ns1:GetRssChannelResponse" name="GetRssChannelResponse"></wsdl:output>
+      <wsdl:fault message="ns1:RssException" name="RssException"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateChannel">
+      <wsdl:input message="ns1:UpdateChannel" name="UpdateChannel"></wsdl:input>
+      <wsdl:output message="ns1:UpdateChannelResponse" name="UpdateChannelResponse"></wsdl:output>
+      <wsdl:fault message="ns1:RssException" name="RssException"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AddChannel">
+      <wsdl:input message="ns1:AddChannel" name="AddChannel"></wsdl:input>
+      <wsdl:output message="ns1:AddChannelResponse" name="AddChannelResponse"></wsdl:output>
+      <wsdl:fault message="ns1:RssException" name="RssException"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveEnclosure">
+      <wsdl:input message="ns1:RemoveEnclosure" name="RemoveEnclosure"></wsdl:input>
+      <wsdl:output message="ns1:RemoveEnclosureResponse" name="RemoveEnclosureResponse"></wsdl:output>
+      <wsdl:fault message="ns1:RssException" name="RssException"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateItem">
+      <wsdl:input message="ns1:UpdateItem" name="UpdateItem"></wsdl:input>
+      <wsdl:output message="ns1:UpdateItemResponse" name="UpdateItemResponse"></wsdl:output>
+      <wsdl:fault message="ns1:RssException" name="RssException"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveItem">
+      <wsdl:input message="ns1:RemoveItem" name="RemoveItem"></wsdl:input>
+      <wsdl:output message="ns1:RemoveItemResponse" name="RemoveItemResponse"></wsdl:output>
+      <wsdl:fault message="ns1:RssException" name="RssException"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AddEnclosure">
+      <wsdl:input message="ns1:AddEnclosure" name="AddEnclosure"></wsdl:input>
+      <wsdl:output message="ns1:AddEnclosureResponse" name="AddEnclosureResponse"></wsdl:output>
+      <wsdl:fault message="ns1:RssException" name="RssException"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AddItem">
+      <wsdl:input message="ns1:AddItem" name="AddItem"></wsdl:input>
+      <wsdl:output message="ns1:AddItemResponse" name="AddItemResponse"></wsdl:output>
+      <wsdl:fault message="ns1:RssException" name="RssException"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllRssFeedNames">
+      <wsdl:input message="ns1:GetAllRssFeedNames" name="GetAllRssFeedNames"></wsdl:input>
+      <wsdl:output message="ns1:GetAllRssFeedNamesResponse" name="GetAllRssFeedNamesResponse"></wsdl:output>
+      <wsdl:fault message="ns1:RssException" name="RssException"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetRssFeed">
+      <wsdl:input message="ns1:GetRssFeed" name="GetRssFeed"></wsdl:input>
+      <wsdl:output message="ns1:GetRssFeedResponse" name="GetRssFeedResponse"></wsdl:output>
+      <wsdl:fault message="ns1:RssException" name="RssException"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveRssChannel">
+      <wsdl:input message="ns1:RemoveRssChannel" name="RemoveRssChannel"></wsdl:input>
+      <wsdl:output message="ns1:RemoveRssChannelResponse" name="RemoveRssChannelResponse"></wsdl:output>
+      <wsdl:fault message="ns1:RssException" name="RssException"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RenameRssFeed">
+      <wsdl:input message="ns1:RenameRssFeed" name="RenameRssFeed"></wsdl:input>
+      <wsdl:output message="ns1:RenameRssFeedResponse" name="RenameRssFeedResponse"></wsdl:output>
+      <wsdl:fault message="ns1:RssException" name="RssException"></wsdl:fault>
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8080/rss/rss-service/</con:endpoint></con:endpoints><con:operation id="ec116fc3-e4e2-4da4-8253-e51eeb0c4083" isOneWay="false" action="AddChannel" name="AddChannel" bindingOperationName="AddChannel" type="Request-Response" outputName="AddChannelResponse" inputName="AddChannel" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="f4b67b54-a0da-406d-914e-91cf9965c6fc" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/rss/rss-service/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:rss="http://microsyndicate.com/rss">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <rss:AddChannel>
+         <!--Optional:-->
+         <RssChannel>
+            <title>?</title>
+            <link>?</link>
+            <description>?</description>
+            <!--Optional:-->
+            <language>?</language>
+            <!--Optional:-->
+            <copyright>?</copyright>
+            <!--Optional:-->
+            <managingEditor>?</managingEditor>
+            <!--Optional:-->
+            <webMaster>?</webMaster>
+            <!--Optional:-->
+            <pubDate>?</pubDate>
+            <!--Optional:-->
+            <lastBuildDate>?</lastBuildDate>
+            <!--Zero or more repetitions:-->
+            <category domain="?">?</category>
+            <!--Optional:-->
+            <generator>?</generator>
+            <!--Optional:-->
+            <docs>?</docs>
+            <!--Optional:-->
+            <cloud domain="?" port="?" path="?" registerProcedure="?" protocol="?"/>
+            <!--Optional:-->
+            <ttl>?</ttl>
+            <!--Optional:-->
+            <image>
+               <!--You may enter the following 6 items in any order-->
+               <url>?</url>
+               <title>?</title>
+               <link>?</link>
+               <!--Optional:-->
+               <width>88</width>
+               <!--Optional:-->
+               <height>31</height>
+               <!--Optional:-->
+               <description>?</description>
+            </image>
+            <!--Optional:-->
+            <rating>?</rating>
+            <!--Optional:-->
+            <textInput>
+               <!--You may enter the following 4 items in any order-->
+               <title>?</title>
+               <description>?</description>
+               <name>?</name>
+               <link>?</link>
+            </textInput>
+            <!--Optional:-->
+            <skipHours>
+               <!--Zero or more repetitions:-->
+               <hour>?</hour>
+            </skipHours>
+            <!--Optional:-->
+            <skipDays>
+               <!--Zero or more repetitions:-->
+               <day>?</day>
+            </skipDays>
+            <!--1 or more repetitions:-->
+            <item>
+               <!--Optional:-->
+               <title>?</title>
+               <!--Optional:-->
+               <description>?</description>
+               <!--Optional:-->
+               <link>?</link>
+               <!--Optional:-->
+               <author>?</author>
+               <!--Zero or more repetitions:-->
+               <category domain="?">?</category>
+               <!--Optional:-->
+               <comments>?</comments>
+               <!--Optional:-->
+               <enclosure url="?" length="?" type="?">?</enclosure>
+               <!--Optional:-->
+               <guid isPermaLink="?">?</guid>
+               <!--Optional:-->
+               <pubDate>?</pubDate>
+               <!--Optional:-->
+               <source url="?">?</source>
+            </item>
+         </RssChannel>
+      </rss:AddChannel>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig mustUnderstand="NONE" version="200508" action="AddChannel"/></con:call></con:operation><con:operation id="324661d4-e920-469e-8ac8-ae449b77bb09" isOneWay="false" action="AddEnclosure" name="AddEnclosure" bindingOperationName="AddEnclosure" type="Request-Response" outputName="AddEnclosureResponse" inputName="AddEnclosure" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="45b96322-3671-437b-a1d1-3412123381c0" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/rss/rss-service/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:rss="http://microsyndicate.com/rss">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <rss:AddEnclosure>
+         <!--Optional:-->
+         <RssItemGuid>?</RssItemGuid>
+         <!--Optional:-->
+         <Enclosure url="?" length="?" type="?">?</Enclosure>
+      </rss:AddEnclosure>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig mustUnderstand="NONE" version="200508" action="AddEnclosure"/></con:call></con:operation><con:operation id="962576bc-35bb-4a05-8086-c9f82d99f5ca" isOneWay="false" action="AddItem" name="AddItem" bindingOperationName="AddItem" type="Request-Response" outputName="AddItemResponse" inputName="AddItem" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="89c14fb7-99db-4694-9dcb-ea35d1cd86b3" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/rss/rss-service/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:rss="http://microsyndicate.com/rss">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <rss:AddItem>
+         <!--Optional:-->
+         <RssChannelTitle>?</RssChannelTitle>
+         <!--Optional:-->
+         <RssItem>
+            <!--Optional:-->
+            <title>?</title>
+            <!--Optional:-->
+            <description>?</description>
+            <!--Optional:-->
+            <link>?</link>
+            <!--Optional:-->
+            <author>?</author>
+            <!--Zero or more repetitions:-->
+            <category domain="?">?</category>
+            <!--Optional:-->
+            <comments>?</comments>
+            <!--Optional:-->
+            <enclosure url="?" length="?" type="?">?</enclosure>
+            <!--Optional:-->
+            <guid isPermaLink="?">?</guid>
+            <!--Optional:-->
+            <pubDate>?</pubDate>
+            <!--Optional:-->
+            <source url="?">?</source>
+         </RssItem>
+      </rss:AddItem>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig mustUnderstand="NONE" version="200508" action="AddItem"/></con:call></con:operation><con:operation id="9c320dd8-e4d4-4e5d-b3d5-15ff3b723f93" isOneWay="false" action="GetAllRssFeedNames" name="GetAllRssFeedNames" bindingOperationName="GetAllRssFeedNames" type="Request-Response" outputName="GetAllRssFeedNamesResponse" inputName="GetAllRssFeedNames" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="f1b64622-4c9d-4b1e-96e8-df7a604a43b2" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/rss/rss-service/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:rss="http://microsyndicate.com/rss">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <rss:GetAllRssFeedNames/>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig mustUnderstand="NONE" version="200508" action="GetAllRssFeedNames"/></con:call></con:operation><con:operation id="e4eeb9fe-f277-476a-a7dc-73bb709bee7d" isOneWay="false" action="GetRssChannel" name="GetRssChannel" bindingOperationName="GetRssChannel" type="Request-Response" outputName="GetRssChannelResponse" inputName="GetRssChannel" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="58894a98-f37a-491a-a2a1-b488e0c5a4f4" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/rss/rss-service/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:rss="http://microsyndicate.com/rss">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <rss:GetRssChannel>
+         <!--Optional:-->
+         <ChannelName>?</ChannelName>
+      </rss:GetRssChannel>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig mustUnderstand="NONE" version="200508" action="GetRssChannel"/></con:call></con:operation><con:operation id="b34a10ce-5521-4ab2-9621-c922bc615ade" isOneWay="false" action="GetRssFeed" name="GetRssFeed" bindingOperationName="GetRssFeed" type="Request-Response" outputName="GetRssFeedResponse" inputName="GetRssFeed" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="c7e8c70b-d028-4009-bab4-fc4175f1e643" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/rss/rss-service/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:rss="http://microsyndicate.com/rss">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <rss:GetRssFeed>
+         <!--Optional:-->
+         <ChannelName>?</ChannelName>
+      </rss:GetRssFeed>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig mustUnderstand="NONE" version="200508" action="GetRssFeed"/></con:call></con:operation><con:operation id="368b3fcc-932a-49e7-ae00-5b6f226af38b" isOneWay="false" action="RemoveEnclosure" name="RemoveEnclosure" bindingOperationName="RemoveEnclosure" type="Request-Response" outputName="RemoveEnclosureResponse" inputName="RemoveEnclosure" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="83f2f67b-a37a-4743-88bd-7d9fd50fdaec" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/rss/rss-service/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:rss="http://microsyndicate.com/rss">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <rss:RemoveEnclosure>
+         <!--Optional:-->
+         <RssItemGuid>?</RssItemGuid>
+      </rss:RemoveEnclosure>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig mustUnderstand="NONE" version="200508" action="RemoveEnclosure"/></con:call></con:operation><con:operation id="c1e0f703-484c-48e2-8a32-191996a4986e" isOneWay="false" action="GetRssFeed" name="RemoveItem" bindingOperationName="RemoveItem" type="Request-Response" outputName="RemoveItemResponse" inputName="RemoveItem" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="4b36afc9-299e-4548-878d-7ef503fb5393" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/rss/rss-service/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:rss="http://microsyndicate.com/rss">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <rss:RemoveItem>
+         <!--Optional:-->
+         <RssChannelTitle>?</RssChannelTitle>
+         <!--Optional:-->
+         <RssItemGuid>?</RssItemGuid>
+      </rss:RemoveItem>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig mustUnderstand="NONE" version="200508" action="GetRssFeed"/></con:call></con:operation><con:operation id="c3a9b201-727e-41c2-9dfe-a30b19dd0b3f" isOneWay="false" action="RemoveRssChannel" name="RemoveRssChannel" bindingOperationName="RemoveRssChannel" type="Request-Response" outputName="RemoveRssChannelResponse" inputName="RemoveRssChannel" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="f34ecae7-ca7d-4eeb-9612-f68ac58bb860" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/rss/rss-service/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:rss="http://microsyndicate.com/rss">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <rss:RemoveRssChannel>
+         <!--Optional:-->
+         <ChannelName>?</ChannelName>
+      </rss:RemoveRssChannel>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig mustUnderstand="NONE" version="200508" action="RemoveRssChannel"/></con:call></con:operation><con:operation id="7cd56d8d-2a3a-4d44-95b7-a5c732c90a51" isOneWay="false" action="RenameRssFeed" name="RenameRssFeed" bindingOperationName="RenameRssFeed" type="Request-Response" outputName="RenameRssFeedResponse" inputName="RenameRssFeed" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="73fcf63c-bc68-4468-8c10-e76019fbe1b9" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/rss/rss-service/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:rss="http://microsyndicate.com/rss">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <rss:RenameRssFeed>
+         <!--Optional:-->
+         <ChannelName>?</ChannelName>
+         <!--Optional:-->
+         <NewChannelName>?</NewChannelName>
+      </rss:RenameRssFeed>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig mustUnderstand="NONE" version="200508" action="RenameRssFeed"/></con:call></con:operation><con:operation id="20c8de25-77e0-4531-9e26-505bce160fc1" isOneWay="false" action="UpdateChannel" name="UpdateChannel" bindingOperationName="UpdateChannel" type="Request-Response" outputName="UpdateChannelResponse" inputName="UpdateChannel" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="c7e24cd5-3085-4049-83e3-c868ad995514" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/rss/rss-service/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:rss="http://microsyndicate.com/rss">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <rss:UpdateChannel>
+         <!--Optional:-->
+         <RssChannelTitle>?</RssChannelTitle>
+         <!--Optional:-->
+         <RssChannel>
+            <title>?</title>
+            <link>?</link>
+            <description>?</description>
+            <!--Optional:-->
+            <language>?</language>
+            <!--Optional:-->
+            <copyright>?</copyright>
+            <!--Optional:-->
+            <managingEditor>?</managingEditor>
+            <!--Optional:-->
+            <webMaster>?</webMaster>
+            <!--Optional:-->
+            <pubDate>?</pubDate>
+            <!--Optional:-->
+            <lastBuildDate>?</lastBuildDate>
+            <!--Zero or more repetitions:-->
+            <category domain="?">?</category>
+            <!--Optional:-->
+            <generator>?</generator>
+            <!--Optional:-->
+            <docs>?</docs>
+            <!--Optional:-->
+            <cloud domain="?" port="?" path="?" registerProcedure="?" protocol="?"/>
+            <!--Optional:-->
+            <ttl>?</ttl>
+            <!--Optional:-->
+            <image>
+               <!--You may enter the following 6 items in any order-->
+               <url>?</url>
+               <title>?</title>
+               <link>?</link>
+               <!--Optional:-->
+               <width>88</width>
+               <!--Optional:-->
+               <height>31</height>
+               <!--Optional:-->
+               <description>?</description>
+            </image>
+            <!--Optional:-->
+            <rating>?</rating>
+            <!--Optional:-->
+            <textInput>
+               <!--You may enter the following 4 items in any order-->
+               <title>?</title>
+               <description>?</description>
+               <name>?</name>
+               <link>?</link>
+            </textInput>
+            <!--Optional:-->
+            <skipHours>
+               <!--Zero or more repetitions:-->
+               <hour>?</hour>
+            </skipHours>
+            <!--Optional:-->
+            <skipDays>
+               <!--Zero or more repetitions:-->
+               <day>?</day>
+            </skipDays>
+            <!--1 or more repetitions:-->
+            <item>
+               <!--Optional:-->
+               <title>?</title>
+               <!--Optional:-->
+               <description>?</description>
+               <!--Optional:-->
+               <link>?</link>
+               <!--Optional:-->
+               <author>?</author>
+               <!--Zero or more repetitions:-->
+               <category domain="?">?</category>
+               <!--Optional:-->
+               <comments>?</comments>
+               <!--Optional:-->
+               <enclosure url="?" length="?" type="?">?</enclosure>
+               <!--Optional:-->
+               <guid isPermaLink="?">?</guid>
+               <!--Optional:-->
+               <pubDate>?</pubDate>
+               <!--Optional:-->
+               <source url="?">?</source>
+            </item>
+         </RssChannel>
+      </rss:UpdateChannel>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig mustUnderstand="NONE" version="200508" action="UpdateChannel"/></con:call></con:operation><con:operation id="ead87c4b-dd5e-42c5-908f-50d71c14b477" isOneWay="false" action="UpdateItem" name="UpdateItem" bindingOperationName="UpdateItem" type="Request-Response" outputName="UpdateItemResponse" inputName="UpdateItem" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="150a4c28-be1c-4ac1-b025-6b29028b233d" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/rss/rss-service/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:rss="http://microsyndicate.com/rss">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <rss:UpdateItem>
+         <!--Optional:-->
+         <RssChannelTitle>?</RssChannelTitle>
+         <!--Optional:-->
+         <RssItem>
+            <!--Optional:-->
+            <title>?</title>
+            <!--Optional:-->
+            <description>?</description>
+            <!--Optional:-->
+            <link>?</link>
+            <!--Optional:-->
+            <author>?</author>
+            <!--Zero or more repetitions:-->
+            <category domain="?">?</category>
+            <!--Optional:-->
+            <comments>?</comments>
+            <!--Optional:-->
+            <enclosure url="?" length="?" type="?">?</enclosure>
+            <!--Optional:-->
+            <guid isPermaLink="?">?</guid>
+            <!--Optional:-->
+            <pubDate>?</pubDate>
+            <!--Optional:-->
+            <source url="?">?</source>
+         </RssItem>
+      </rss:UpdateItem>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig mustUnderstand="NONE" version="200508" action="UpdateItem"/></con:call></con:operation></con:interface><con:testSuite id="445deed7-10b1-460e-a259-07dd1ad67059" name="RssServiceSoapBinding TestSuite"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="b307ee4c-1374-4fb0-8f4a-754a89bc94fe" discardOkResults="true" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="RssServiceSoapBinding TestCase" searchProperties="true" timeout="0" maxResults="0"><con:settings/><con:savedRecentRuns>1</con:savedRecentRuns><con:testStep type="request" id="1f1e58d8-d302-4fb4-a265-935f362f51ed" name="AddChannel"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>RssServiceSoapBinding</con:interface><con:operation>AddChannel</con:operation><con:request name="AddChannel" id="91242c96-7165-4247-b889-ea2f8503b15a"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/rss/rss-service/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:rss="http://microsyndicate.com/rss">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <rss:AddChannel>
+         <!--Optional:-->
+         <RssChannel>
+            <title>?</title>
+            <link>?</link>
+            <description>?</description>
+            <!--Optional:-->
+            <language>?</language>
+            <!--Optional:-->
+            <copyright>?</copyright>
+            <!--Optional:-->
+            <managingEditor>?</managingEditor>
+            <!--Optional:-->
+            <webMaster>?</webMaster>
+            <!--Optional:-->
+            <pubDate>?</pubDate>
+            <!--Optional:-->
+            <lastBuildDate>?</lastBuildDate>
+            <!--Zero or more repetitions:-->
+            <category domain="?">?</category>
+            <!--Optional:-->
+            <generator>?</generator>
+            <!--Optional:-->
+            <docs>?</docs>
+            <!--Optional:-->
+            <cloud domain="?" port="?" path="?" registerProcedure="?" protocol="?"/>
+            <!--Optional:-->
+            <ttl>?</ttl>
+            <!--Optional:-->
+            <image>
+               <!--You may enter the following 6 items in any order-->
+               <url>?</url>
+               <title>?</title>
+               <link>?</link>
+               <!--Optional:-->
+               <width>88</width>
+               <!--Optional:-->
+               <height>31</height>
+               <!--Optional:-->
+               <description>?</description>
+            </image>
+            <!--Optional:-->
+            <rating>?</rating>
+            <!--Optional:-->
+            <textInput>
+               <!--You may enter the following 4 items in any order-->
+               <title>?</title>
+               <description>?</description>
+               <name>?</name>
+               <link>?</link>
+            </textInput>
+            <!--Optional:-->
+            <skipHours>
+               <!--Zero or more repetitions:-->
+               <hour>?</hour>
+            </skipHours>
+            <!--Optional:-->
+            <skipDays>
+               <!--Zero or more repetitions:-->
+               <day>?</day>
+            </skipDays>
+            <!--1 or more repetitions:-->
+            <item>
+               <!--Optional:-->
+               <title>?</title>
+               <!--Optional:-->
+               <description>?</description>
+               <!--Optional:-->
+               <link>?</link>
+               <!--Optional:-->
+               <author>?</author>
+               <!--Zero or more repetitions:-->
+               <category domain="?">?</category>
+               <!--Optional:-->
+               <comments>?</comments>
+               <!--Optional:-->
+               <enclosure url="?" length="?" type="?">?</enclosure>
+               <!--Optional:-->
+               <guid isPermaLink="?">?</guid>
+               <!--Optional:-->
+               <pubDate>?</pubDate>
+               <!--Optional:-->
+               <source url="?">?</source>
+            </item>
+         </RssChannel>
+      </rss:AddChannel>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="AddChannel"/></con:request></con:config></con:testStep><con:testStep type="request" id="1a72bbf3-9139-43a0-90a5-55a7e55188ab" name="AddEnclosure"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>RssServiceSoapBinding</con:interface><con:operation>AddEnclosure</con:operation><con:request name="AddEnclosure" id="a93a69ce-e555-45e2-8845-b0681eb40ba6"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/rss/rss-service/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:rss="http://microsyndicate.com/rss">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <rss:AddEnclosure>
+         <!--Optional:-->
+         <RssItemGuid>?</RssItemGuid>
+         <!--Optional:-->
+         <Enclosure url="?" length="?" type="?">?</Enclosure>
+      </rss:AddEnclosure>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="AddEnclosure"/></con:request></con:config></con:testStep><con:testStep type="request" id="613f8942-765b-463d-8ae2-9de91e03b6c2" name="AddItem"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>RssServiceSoapBinding</con:interface><con:operation>AddItem</con:operation><con:request name="AddItem" id="c9296737-d930-4466-b03f-a5dbd228f850"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/rss/rss-service/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:rss="http://microsyndicate.com/rss">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <rss:AddItem>
+         <!--Optional:-->
+         <RssChannelTitle>?</RssChannelTitle>
+         <!--Optional:-->
+         <RssItem>
+            <!--Optional:-->
+            <title>?</title>
+            <!--Optional:-->
+            <description>?</description>
+            <!--Optional:-->
+            <link>?</link>
+            <!--Optional:-->
+            <author>?</author>
+            <!--Zero or more repetitions:-->
+            <category domain="?">?</category>
+            <!--Optional:-->
+            <comments>?</comments>
+            <!--Optional:-->
+            <enclosure url="?" length="?" type="?">?</enclosure>
+            <!--Optional:-->
+            <guid isPermaLink="?">?</guid>
+            <!--Optional:-->
+            <pubDate>?</pubDate>
+            <!--Optional:-->
+            <source url="?">?</source>
+         </RssItem>
+      </rss:AddItem>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="AddItem"/></con:request></con:config></con:testStep><con:testStep type="request" id="c70e1c13-c984-4d9d-b2f1-30af431d46f8" name="GetAllRssFeedNames"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>RssServiceSoapBinding</con:interface><con:operation>GetAllRssFeedNames</con:operation><con:request name="GetAllRssFeedNames" id="286ca78d-38d8-40a7-990a-00a7d3faf9c6"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/rss/rss-service/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:rss="http://microsyndicate.com/rss">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <rss:GetAllRssFeedNames/>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="GetAllRssFeedNames"/></con:request></con:config></con:testStep><con:testStep type="request" id="b0fb5604-28be-4031-afc8-b7430d91a819" name="GetRssChannel"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>RssServiceSoapBinding</con:interface><con:operation>GetRssChannel</con:operation><con:request name="GetRssChannel" id="02b563c1-acb1-4ed0-bc5d-6a84943078e0"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/rss/rss-service/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:rss="http://microsyndicate.com/rss">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <rss:GetRssChannel>
+         <!--Optional:-->
+         <ChannelName>?</ChannelName>
+      </rss:GetRssChannel>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="GetRssChannel"/></con:request></con:config></con:testStep><con:testStep type="request" id="7038a4b1-740e-415e-83e9-f47dd5b7dfbd" name="GetRssFeed"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>RssServiceSoapBinding</con:interface><con:operation>GetRssFeed</con:operation><con:request name="GetRssFeed" id="ffa4e168-7538-44a9-bef4-35772d05630b"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/rss/rss-service/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:rss="http://microsyndicate.com/rss">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <rss:GetRssFeed>
+         <!--Optional:-->
+         <ChannelName>?</ChannelName>
+      </rss:GetRssFeed>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="GetRssFeed"/></con:request></con:config></con:testStep><con:testStep type="request" id="df6b7f62-913f-4d85-bdd9-59ffe1f1e54d" name="RemoveEnclosure"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>RssServiceSoapBinding</con:interface><con:operation>RemoveEnclosure</con:operation><con:request name="RemoveEnclosure" id="e8939ef3-2b49-4787-915d-6973a2e7c123"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/rss/rss-service/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:rss="http://microsyndicate.com/rss">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <rss:RemoveEnclosure>
+         <!--Optional:-->
+         <RssItemGuid>?</RssItemGuid>
+      </rss:RemoveEnclosure>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="RemoveEnclosure"/></con:request></con:config></con:testStep><con:testStep type="request" id="1201b247-9776-456e-b3a6-5e7e6223e708" name="RemoveItem"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>RssServiceSoapBinding</con:interface><con:operation>RemoveItem</con:operation><con:request name="RemoveItem" id="26e99cef-9c73-44b6-99b8-5b72c947dfe7"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/rss/rss-service/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:rss="http://microsyndicate.com/rss">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <rss:RemoveItem>
+         <!--Optional:-->
+         <RssChannelTitle>?</RssChannelTitle>
+         <!--Optional:-->
+         <RssItemGuid>?</RssItemGuid>
+      </rss:RemoveItem>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="GetRssFeed"/></con:request></con:config></con:testStep><con:testStep type="request" id="09d56ce8-1fe9-42ae-833d-eba8754ddb39" name="RemoveRssChannel"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>RssServiceSoapBinding</con:interface><con:operation>RemoveRssChannel</con:operation><con:request name="RemoveRssChannel" id="4628a889-e174-4b90-a3e4-899612d0b47e"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/rss/rss-service/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:rss="http://microsyndicate.com/rss">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <rss:RemoveRssChannel>
+         <!--Optional:-->
+         <ChannelName>?</ChannelName>
+      </rss:RemoveRssChannel>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="RemoveRssChannel"/></con:request></con:config></con:testStep><con:testStep type="request" id="228f5349-1901-47d9-9c6f-a22731d7011e" name="RenameRssFeed"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>RssServiceSoapBinding</con:interface><con:operation>RenameRssFeed</con:operation><con:request name="RenameRssFeed" id="df554ed9-da38-4193-9aab-940e0c926a65"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/rss/rss-service/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:rss="http://microsyndicate.com/rss">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <rss:RenameRssFeed>
+         <!--Optional:-->
+         <ChannelName>?</ChannelName>
+         <!--Optional:-->
+         <NewChannelName>?</NewChannelName>
+      </rss:RenameRssFeed>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="RenameRssFeed"/></con:request></con:config></con:testStep><con:testStep type="request" id="1372c57e-43e6-4795-abbf-422f0a286693" name="UpdateChannel"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>RssServiceSoapBinding</con:interface><con:operation>UpdateChannel</con:operation><con:request name="UpdateChannel" id="f8bbbbb3-1443-420e-b190-0c1fe4b6d8cd"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/rss/rss-service/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:rss="http://microsyndicate.com/rss">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <rss:UpdateChannel>
+         <!--Optional:-->
+         <RssChannelTitle>?</RssChannelTitle>
+         <!--Optional:-->
+         <RssChannel>
+            <title>?</title>
+            <link>?</link>
+            <description>?</description>
+            <!--Optional:-->
+            <language>?</language>
+            <!--Optional:-->
+            <copyright>?</copyright>
+            <!--Optional:-->
+            <managingEditor>?</managingEditor>
+            <!--Optional:-->
+            <webMaster>?</webMaster>
+            <!--Optional:-->
+            <pubDate>?</pubDate>
+            <!--Optional:-->
+            <lastBuildDate>?</lastBuildDate>
+            <!--Zero or more repetitions:-->
+            <category domain="?">?</category>
+            <!--Optional:-->
+            <generator>?</generator>
+            <!--Optional:-->
+            <docs>?</docs>
+            <!--Optional:-->
+            <cloud domain="?" port="?" path="?" registerProcedure="?" protocol="?"/>
+            <!--Optional:-->
+            <ttl>?</ttl>
+            <!--Optional:-->
+            <image>
+               <!--You may enter the following 6 items in any order-->
+               <url>?</url>
+               <title>?</title>
+               <link>?</link>
+               <!--Optional:-->
+               <width>88</width>
+               <!--Optional:-->
+               <height>31</height>
+               <!--Optional:-->
+               <description>?</description>
+            </image>
+            <!--Optional:-->
+            <rating>?</rating>
+            <!--Optional:-->
+            <textInput>
+               <!--You may enter the following 4 items in any order-->
+               <title>?</title>
+               <description>?</description>
+               <name>?</name>
+               <link>?</link>
+            </textInput>
+            <!--Optional:-->
+            <skipHours>
+               <!--Zero or more repetitions:-->
+               <hour>?</hour>
+            </skipHours>
+            <!--Optional:-->
+            <skipDays>
+               <!--Zero or more repetitions:-->
+               <day>?</day>
+            </skipDays>
+            <!--1 or more repetitions:-->
+            <item>
+               <!--Optional:-->
+               <title>?</title>
+               <!--Optional:-->
+               <description>?</description>
+               <!--Optional:-->
+               <link>?</link>
+               <!--Optional:-->
+               <author>?</author>
+               <!--Zero or more repetitions:-->
+               <category domain="?">?</category>
+               <!--Optional:-->
+               <comments>?</comments>
+               <!--Optional:-->
+               <enclosure url="?" length="?" type="?">?</enclosure>
+               <!--Optional:-->
+               <guid isPermaLink="?">?</guid>
+               <!--Optional:-->
+               <pubDate>?</pubDate>
+               <!--Optional:-->
+               <source url="?">?</source>
+            </item>
+         </RssChannel>
+      </rss:UpdateChannel>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="UpdateChannel"/></con:request></con:config></con:testStep><con:testStep type="request" id="adcb9204-b9a1-4a00-ba14-e52e72dcd389" name="UpdateItem"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>RssServiceSoapBinding</con:interface><con:operation>UpdateItem</con:operation><con:request name="UpdateItem" id="ec85f198-be91-4afa-ac04-f300abe84a43"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/rss/rss-service/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:rss="http://microsyndicate.com/rss">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <rss:UpdateItem>
+         <!--Optional:-->
+         <RssChannelTitle>?</RssChannelTitle>
+         <!--Optional:-->
+         <RssItem>
+            <!--Optional:-->
+            <title>?</title>
+            <!--Optional:-->
+            <description>?</description>
+            <!--Optional:-->
+            <link>?</link>
+            <!--Optional:-->
+            <author>?</author>
+            <!--Zero or more repetitions:-->
+            <category domain="?">?</category>
+            <!--Optional:-->
+            <comments>?</comments>
+            <!--Optional:-->
+            <enclosure url="?" length="?" type="?">?</enclosure>
+            <!--Optional:-->
+            <guid isPermaLink="?">?</guid>
+            <!--Optional:-->
+            <pubDate>?</pubDate>
+            <!--Optional:-->
+            <source url="?">?</source>
+         </RssItem>
+      </rss:UpdateItem>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="UpdateItem"/></con:request></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase><con:properties/><con:reportParameters/></con:testSuite><con:savedRecentRuns>1</con:savedRecentRuns><con:requirements/><con:properties/><con:wssContainer/><con:databaseConnectionContainer/><con:oAuth2ProfileContainer/><con:reporting><con:xmlTemplates/><con:parameters/></con:reporting><con:authRepository/><con:tags/></con:soapui-project>

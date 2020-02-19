@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<persistence version="2.0" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd
+http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_2_0.xsd" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:orm="http://java.sun.com/xml/ns/persistence/orm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <persistence-unit name="myrss" transaction-type="RESOURCE_LOCAL">
+
+<!--
+    <jta-data-source>java:comp/env/MyDataSource</jta-data-source>
+    <non-jta-data-source>java:comp/env/MyDataSource</non-jta-data-source>
+    -->
+
+        <class>rss.Category</class>
+        <class>rss.Cloud</class>
+        <class>rss.Enclosure</class>
+        <class>rss.Guid</class>
+        <class>rss.Image</class>
+        <class>rss.Rss</class>
+        <class>rss.RssChannel</class>
+        <class>rss.RssItem</class>
+        <class>rss.SkipDaysList</class>
+        <class>rss.SkipHoursList</class>
+        <class>rss.Source</class>
+        <class>rss.TextInput</class>
+        <properties>
+            <property name="openjpa.ConnectionProperties" value="DatabaseName=rss"/>
+
+            <property name="openjpa.Log" value="File=/tmp/jpa.log, SQL=TRACE, Runtime=TRACE, DefaultLevel=TRACE, Tool=TRACE"/>
+
+<!--
+            <property name="openjpa.ConnectionDriverName" value="org.apache.derby.jdbc.EmbeddedDataSource"/>
+            <property name="openjpa.ConnectionUserName" value="sa"/>
+            <property name="openjpa.ConnectionDatabaseName" value="test"/>
+            <property name="openjpa.ConnectionPassword" value="pass"/>
+            <property name="openjpa.ConnectionURL" value="jdbc:derby:none"/>
+            -->
+
+            <property name="javax.persistence.jdbc.driver" value="org.postgresql.ds.PGSimpleDataSource"/>
+            <property name="javax.persistence.jdbc.password" value=""/>
+            <property name="javax.persistence.jdbc.user" value="rss"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://rss"/>
+
+            <property name="openjpa.jdbc.SynchronizeMappings" value="refresh"/>
+<!--
+            <property name="openjpa.jdbc.SynchronizeMappings" value="buildSchema(PrimaryKeys=true,ForeignKeys=true,Sequences=true)"/>
+            -->
+            <!--
+            <property name="openjpa.jdbc.SynchronizeMappings" value="buildSchema(PrimaryKeys=true,ForeignKeys=true,Sequences=true),add,refresh,deleteTableContents"/>
+            -->
+
+        </properties>
+    </persistence-unit>
+</persistence>

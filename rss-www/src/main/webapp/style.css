@@ -1,0 +1,175 @@
+#control-attributes {
+    width: 800px;
+    border: 1px dotted black;
+    margin: 0;
+    padding: 5px;
+}
+
+#input-attributes .disabled {
+    display: none;
+}
+
+#input-attributes label {
+    width: 7em;
+    float: none;
+}
+
+#outer {
+    margin:0px;
+    padding:0px;
+}
+
+#switch1 .case .input, .select1 {
+    margin-top: 15px;
+}
+
+.boolean {
+    margin: 1pt;
+}
+
+#triggerpane tr {
+    margin-bottom: 10px;
+    display: block;
+}
+
+.xfControl {
+    margin-bottom: 16px;
+    valign: top;
+}
+
+.xfControl .xfLabel {
+    width: 160px;
+    text-align: right;
+    vertical-align: top;
+}
+
+
+
+.xfInput .xfLabel,
+    .xfSecret .xfLabel,
+    .xfUpload .xfLabel,
+    .xfOutput .xfLabel {
+    width: 200px;
+    text-align: right;
+    float: left;
+}
+
+.xfControl select {
+    background-color: white;
+}
+
+.dijitButtonHover .dijitButtonNode,
+    .dijitButtonNodeHover,
+    .dijitToggleButtonHover .dijitButtonNode,
+    .dijitDropDownButtonHover .dijitButtonNode,
+    .dijitComboButtonHover .dijitButtonContents,
+    .dijitComboButtonDownArrowHover .dijitDownArrowButton,
+    .dijitComboBoxHover .dijitDownArrowButton,
+    .dijitSpinnerUpArrowHover .dijitUpArrowButton,
+    .dijitSpinnerDownArrowHover .dijitDownArrowButton {
+    border: 0;
+    background:transparent;
+}
+
+html, body, #main{
+    width: 100%;	/* make the body expand to fill the visible window */
+    height: 100%;
+    overflow: hidden;	/* erase window level scrollbars */
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
+    font: 10pt Arial,Myriad,Tahoma,Verdana,sans-serif;
+}
+
+.dijitBorderContainer {
+    position:absolute;
+}
+
+.xfSelect .xfLabel,
+    .xfSelect1 .xfLabel {
+    width: 140px;
+    text-align: right;
+    float: left;
+
+}
+
+.xfSelectorItem .xfLabel {
+    width: 140px;
+    text-align: right;
+    display: inline;
+    float: none;
+}
+
+.xfRange .xfLabel {
+    width: 100px;
+    display: block;
+    text-align: left;
+    float: left;
+}
+
+.xfUpload.xfLabel {
+    width: 110px;
+}
+
+.xfRange .xfHelpIcon {
+    float: none;
+    display: block;
+}
+
+.xfTextarea .xfLabel {
+    width: 200px;
+    text-align: left;
+    display: block;
+    float: left;
+}
+
+.xfTextarea .xfHelpIcon {
+    float: none;
+    display: block;
+}
+
+.xfTrigger {
+    width: 140px;
+}
+
+.xfHelpIcon {
+    float: left;
+}
+
+.row {
+    height: 50px;
+
+}
+
+.entry {
+    padding-right: 10px;
+    vertical-align: top;
+}
+
+.mips {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+.mips .xfLabel {
+    width: 80px;
+    text-align: left;
+    position: absolute;
+    left: 45px;
+}
+
+
+
+#switch1 {
+    width:600px;	/* make the body expand to fill the visible window */
+
+}
+
+#reportBug{
+    display:inline;
+}
+
+#caSelect1Table{
+    padding-left:0px;
+    padding-top:15px;
+}
